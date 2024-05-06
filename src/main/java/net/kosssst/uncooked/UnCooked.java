@@ -1,7 +1,9 @@
 package net.kosssst.uncooked;
 
 import com.mojang.logging.LogUtils;
+import net.kosssst.uncooked.item.ModItems;
 import net.minecraft.client.Minecraft;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -29,6 +31,8 @@ public class UnCooked {
     public UnCooked() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModItems.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -42,7 +46,9 @@ public class UnCooked {
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        if(event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
+            event.accept(ModItems.UNFURNACE_ITEM);
+        }
     }
 
     @SubscribeEvent
