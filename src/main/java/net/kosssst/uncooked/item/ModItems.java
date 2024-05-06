@@ -10,7 +10,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, UnCooked.MOD_ID);
 
-    public static final RegistryObject<Item> UNFURNACE_ITEM = ITEMS.register("unfurnace", () -> new Item(new Item.Properties()));
+//    public static final RegistryObject<Item> UNFURNACE_ITEM = ITEMS.register("unfurnace", () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
