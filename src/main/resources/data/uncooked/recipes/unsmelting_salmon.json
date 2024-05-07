@@ -1,0 +1,10 @@
+{
+  "type": "uncooked:unsmelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "minecraft:cooked_salmon"
+  },
+  "result": "minecraft:salmon"
+}
