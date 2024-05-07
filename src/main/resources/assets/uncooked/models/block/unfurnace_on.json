@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "uncooked:block/unfurnace_front_on",
+    "side": "uncooked:block/unfurnace_side",
+    "top": "uncooked:block/unfurnace_top"
+  }
+}

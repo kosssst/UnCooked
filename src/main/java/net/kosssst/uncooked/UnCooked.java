@@ -2,6 +2,7 @@ package net.kosssst.uncooked;
 
 import com.mojang.logging.LogUtils;
 import net.kosssst.uncooked.block.ModBlocks;
+import net.kosssst.uncooked.entity.ModBlockEntities;
 import net.kosssst.uncooked.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -34,6 +35,7 @@ public class UnCooked {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

@@ -18,7 +18,7 @@ import java.util.function.Supplier;
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, UnCooked.MOD_ID);
 
-    public static final RegistryObject<Block> UNFURNACE_BLOCK = registerBlock("unfurnace", () -> new UnFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
+    public static final RegistryObject<Block> UNFURNACE_BLOCK = registerBlock("unfurnace", () -> new UnFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).strength(3.5f).requiresCorrectToolForDrops()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
