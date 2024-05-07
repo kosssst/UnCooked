@@ -35,7 +35,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public class UnFurnaceBlock extends AbstractFurnaceBlock {
+public class UnFurnaceBlock extends AbstractUnFurnaceBlock {
 
     public UnFurnaceBlock(Properties pProperties) {
         super(pProperties);
@@ -79,10 +79,9 @@ public class UnFurnaceBlock extends AbstractFurnaceBlock {
         }
     }
 
-    //    @Override
-//    public @NotNull InteractionResult use(@NotNull BlockState pState, Level pLevel, @NotNull BlockPos pPos, @NotNull Player pPlayer, @NotNull InteractionHand pHand, @NotNull BlockHitResult pHit) {
-//        pLevel.playLocalSound(pPos, SoundEvents.TNT_PRIMED, SoundSource.BLOCKS, 1.0f, 1.0f, false);
-//        return InteractionResult.SUCCESS;
-//    }
-
+    @Override
+    public void playerDestroy(Level pLevel, Player pPlayer, BlockPos pPos, BlockState pState, @org.jetbrains.annotations.Nullable BlockEntity pBlockEntity, ItemStack pTool) {
+        popResource(pLevel, pPos, new ItemStack(this.asItem(), 1));
+        super.playerDestroy(pLevel, pPlayer, pPos, pState, pBlockEntity, pTool);
+    }
 }
